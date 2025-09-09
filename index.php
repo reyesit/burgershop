@@ -26,6 +26,8 @@
     <style>
         :root {
             --bs-warning: #ffc107;
+            --dark-red: #d30528ff;
+            --light-red: #fa4a67ff;
         }
 
         /*height of logo in navbar*/
@@ -68,17 +70,17 @@
         #burgers {
             min-height: 100vh;
             height: auto;
-            background: linear-gradient( var(--light-blue), var(--dark-blue));
+            background: linear-gradient( var(--dark-red), var(--light-red));
         }
 
         #burgers .header {
             margin-top: 8rem;
         }
-        #burgers .burgers-list {
+        #burgers .burger-list {
             margin-bottom: 2rem;
         }
 
-        #burgers .burgers {
+        #burgers .burger {
             margin-top: 1rem;
             width: 18rem;
         }
@@ -88,7 +90,7 @@
             width: 80vw;
         }
 
-        #burgers .burgers .card-body {
+        #burgers .burger .card-body {
             padding: 5rem 2rem;
         }
 
@@ -136,8 +138,8 @@
 	<!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top bg-warning shadow-sm">
         <div class="container-fluid">
-            <a class="navbar-brand d-flex align-items-center fw-bold" href="index.php">
-                <img src="images/logo.png" alt="Logo" class="d-inline-block align-text-top">
+            <a class="navbar-brand d-flex align-items-center fw-bold" href="/burgershop/index.php">
+                <img src="images/new-logo.png" alt="Logo" class="d-inline-block align-text-top">
                 <?= $settings['website_name'] ?>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -269,7 +271,7 @@
                                             window.location.assign('admin/index.php');
                                         </script>
                                     <?php 
-                                    } else if ($userData[role] === 'CUSTOMER') {
+                                    } else if ($userData['role'] === 'CUSTOMER') {
                                         ?>
                                         <script>
                                             alert('Welcome <?= $userData['first_name'] ?>!');
@@ -324,16 +326,16 @@
      <!-- Burgers -->
     <div id="burgers" class="nav-link-hero-contents d-flex flex-column justify-content-center align-items-center">
 
-        <div class="header text-dark text-center">
+        <div class="header text-white text-center">
             <h1 class="display-4 fw-bold">Burgers</h1>
             <span class="d-block lead">Bumili na ang aming masarap na Burger. Mura na, masarap pa!</span>
         </div>
 
-        <div class="burgers-list">
+        <div class="burger-list">
 
             <!-- PHP code for burgers -->
             <?php
-                // Prepare Plans
+                // Prepare Burgers Query
                 $query = "SELECT name, description, price
                     FROM 
                         `burgers_tbl`
@@ -352,10 +354,10 @@
                     <div class="row">
                 <?php } ?>
 
-                        <!-- Plan Card -->
+                        <!-- Burger Card -->
                         <div class="col d-flex justify-content-center align-items-center">
 
-                            <div class="internet-plan card mb-3 text-center">
+                            <div class="burger card mb-3 text-center">
                                 <div class="card-body">
                                     <h5 class="card-title"><?= $burger['name']?></h5>
                                     <p class="card-text"><?= $burger['description']?></p>
@@ -406,7 +408,7 @@
 
                     <?php 
                         while($service = mysqli_fetch_assoc($queryResult)) {
-                    ?> <!-- need isara para makapag makapagpasok ng html for plans card (hamburger method) -->
+                    ?> <!-- need isara para makapag makapagpasok ng html for burgers card (hamburger method) -->
 
                     <!-- Service card -->
                         <div class="col">

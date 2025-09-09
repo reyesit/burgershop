@@ -8,7 +8,7 @@
 </style>
 
 <!-- Navbar -->
-<nav id="navbar" class="navbar bg-primary" style="height: 8%;">
+<nav id="navbar" class="navbar bg-danger" style="height: 8%;">
     <div class="container-fluid d-flex justify-content-end">
         <div>
             <ul class="navbar-nav flex-row mb-2 mb-lg-0">
@@ -24,7 +24,7 @@
 
                         <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle text-light" data-bs-toggle="dropdown" aria-expanded="false"> 
                             <img src="https://github.com/mdo.png" alt="" width="32"height="32" class="rounded-circle me-2">
-                            <strong></strong>
+                            <strong><?= $_SESSION['user']['first_name'] ?></strong>
                         </a>
                         <!-- Dropdown-menu -->
                         <ul class="dropdown-menu text-small shadow position-absolute">

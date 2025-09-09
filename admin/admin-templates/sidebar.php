@@ -20,21 +20,29 @@
     #sidebar .nav-link.active {
         color: var(--bs-light);
     }
+
+    #sidebar .nav-pills .nav-link.active {
+        background-color: var(--dark-red);
+        color: var(--bs-light);
+    }
+
 </style>
 
 <!-- Sidebar -->
 <div id="sidebar" class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary vh-100" style="width: 240px;"> 
 
     <!-- Brand -->
-    <a class="navbar-brand d-flex align-items-center" href="/">
+    <a class="navbar-brand d-flex align-items-center" href="/burgershop">
+        <!-- dito is dapat yung reference niya sa images ay nakasunod lagi sa index.php dahil included file lang naman ang files sa admin-template folder -->
         <img src="<?= $settings[0]['logo_image_path'] ?>" alt="Logo" class="d-inline-block align-text-top">
-        <span class="fs-4 ms-2">
+        <span class="fs-4 ms-2 fw-semibold">
             <?= $settings[0]['website_name'] ?>
         </span>
     </a>
     <hr>
 
     <!-- Tabs -->
+     <!-- yung nav-pills is may default bootstrap color blue sya kaya matic may parang naka hover na syang blue-->
     <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item"> 
             <a class="nav-link <?php if($pageConfig['sidebarPage'] === 'DASHBOARD') echo 'active' ?>" href="/burgershop/admin"> 
@@ -58,9 +66,9 @@
         </li>
 
         <li class="nav-item"> 
-            <a class="nav-link <?php if($pageConfig['sidebarPage'] === 'PLANS') echo 'active' ?>" href="/burgershop/admin/plans"> 
+            <a class="nav-link <?php if($pageConfig['sidebarPage'] === 'BURGERS') echo 'active' ?>" href="/burgershop/admin/burgers"> 
                 <i class="bi bi-file-earmark-post pe-none me-2"></i>
-                Plans
+                Burgers
             </a> 
         </li>
 

@@ -4,7 +4,8 @@
 
 <style>
     :root {
-        --dark-blue: #00285a;
-        --light-blue: #466ea1;
+        /* customize color fo the website */
+        --dark-red: #d30528ff;
+        --light-red: #fa4a67ff;
     }
 </style>
